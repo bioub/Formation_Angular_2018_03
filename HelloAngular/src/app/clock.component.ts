@@ -17,9 +17,11 @@ export class ClockComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // Zone.js intercepter le callback async
+    // et lancer la détection de changement juste après
     setInterval(() => {
       this.now = new Date();
-    }, 1000)
+    }, 1000);
   }
 
 }

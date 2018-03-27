@@ -1,6 +1,6 @@
 const prenom = 'Romain';
 
-function hello(prenom: any) {
+function hello(prenom) {
   console.log(`Bonjour ${prenom}`);
 }
 

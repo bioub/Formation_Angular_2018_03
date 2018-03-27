@@ -1,20 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ClockComponent } from './clock.component';
-import { ListComponent } from './list.component';
+import { ContactsModule } from './contacts/contacts.module';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClockComponent,
-    ListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CoreModule,
+    ContactsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
