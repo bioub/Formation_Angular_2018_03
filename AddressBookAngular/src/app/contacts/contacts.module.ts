@@ -5,11 +5,22 @@ import { ContactsShowComponent } from './contacts-show/contacts-show.component';
 import { ContactsAddComponent } from './contacts-add/contacts-add.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { SharedModule } from '../shared/shared.module';
+import { ContactService } from './shared/contact.service';
 
 @NgModule({
   imports: [
     SharedModule,
   ],
-  declarations: [ContactsListComponent, ContactsShowComponent, ContactsAddComponent, ContactsComponent]
+  declarations: [
+    ContactsComponent,
+    ContactsAddComponent,
+    ContactsListComponent,
+    ContactsShowComponent,
+  ],
+  providers: [
+    // { provide: ContactService, useClass: ContactService }
+    // équivalent à
+    ContactService,
+  ]
 })
 export class ContactsModule { }

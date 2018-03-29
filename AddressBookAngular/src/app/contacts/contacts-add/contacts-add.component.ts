@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact } from '../shared/contact.model';
+import { ContactService } from '../shared/contact.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ab-contacts-add',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsAddComponent implements OnInit {
 
-  constructor() { }
+  public contact = new Contact();
+
+  constructor(
+    private contactService: ContactService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+  }
+
+  addContact() {
+    this.contactService.create(this.contact).subscribe((contact) => {
+      this.contactService.events.emit('contact.written');
+      this.router.navigate(['', 'contacts', contact.id]);
+    });
   }
 
 }

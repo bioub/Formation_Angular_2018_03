@@ -1,3 +1,8 @@
-<p>
-  contacts-list works!
-</p>
+<div class="list-group">
+  <a class="list-group-item list-group-item-action"
+     *ngFor="let contact of contacts$ | async"
+     [routerLink]="[contact.id]"
+     routerLinkActive="active">
+    {{contact.name}}
+  </a>
+</div>
