@@ -5,7 +5,7 @@
            [(ngModel)]="contact.name"
            [ngClass]="{'is-invalid': ngModelName.invalid && (ngModelName.touched || ngFormContact.submitted)}"
            #ngModelName="ngModel">
-    <div class="invalid-feedback" *ngIf="ngModelName.errors?.required">
+    <div class="invalid-feedback" *ngIf="ngModelName?.errors?.required">
       Name is required.
     </div>
   </div>

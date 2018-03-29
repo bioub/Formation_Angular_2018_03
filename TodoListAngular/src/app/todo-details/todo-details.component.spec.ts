@@ -22,4 +22,12 @@ describe('TodoDetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render todo input', () => {
+    component.todo = 'Acheter du pain';
+    fixture.detectChanges();
+    const pContent = fixture.debugElement.nativeElement.querySelector('p').innerText;
+    expect(pContent).toContain('Acheter du pain');
+  });
+
 });

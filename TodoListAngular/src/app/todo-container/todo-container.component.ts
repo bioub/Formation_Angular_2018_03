@@ -14,4 +14,7 @@ export class TodoContainerComponent implements OnInit {
   ngOnInit() {
   }
 
+  addTodo(todo) {
+    this.todos.push(todo);
+  }
 }
